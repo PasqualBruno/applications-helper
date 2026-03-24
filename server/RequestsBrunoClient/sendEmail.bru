@@ -1,0 +1,23 @@
+meta {
+  name: sendEmail
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/send
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "jobName": "Desenvolvedor Full Stack",
+    "recipientEmail": "brunopasqual0@gmail.com"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
