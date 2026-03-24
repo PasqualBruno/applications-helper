@@ -1,4 +1,5 @@
-export interface MailRequest {
-  nomeVaga: string;
-  emailDestino: string;
+export interface ISendEmailRequest {
+  jobName: string;
+  recipientEmail: string;
+  postLink?: string;
 }

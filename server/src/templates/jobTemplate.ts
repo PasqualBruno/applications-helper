@@ -1,12 +1,24 @@
-/**
- * Função responsável por gerar o corpo do e-mail formatado.
- * Segue o padrão de 'Separation of Concerns' (Separação de Preocupações).
- */
-export const generateJobEmail = (nomeVaga: string): string => {
-  return `
-Olá, boa noite.
+const getGreeting = (): string => {
+  const formatter = new Intl.DateTimeFormat("pt-BR", {
+    timeZone: "America/Sao_Paulo",
+    hour: "numeric",
+    hour12: false,
+  });
 
-Me chamo Bruno Pasqual e estou enviando meu currículo para participar do processo seletivo para a vaga de ${nomeVaga}. Possuo experiência prévia na área, tendo atuado como:
+  const hour = parseInt(formatter.format(new Date()));
+
+  if (hour >= 5 && hour < 12) return "Bom dia";
+  if (hour >= 12 && hour < 18) return "Boa tarde";
+  return "Boa noite";
+};
+
+export const generateJobEmail = (jobName: string): string => {
+  const greeting = getGreeting();
+
+  return `
+Olá, ${greeting.toLowerCase()}.
+
+Me chamo Bruno Pasqual e estou enviando meu currículo para participar do processo seletivo para a vaga de ${jobName}. Possuo experiência prévia na área, tendo atuado como:
 
 Desenvolvedor Front-End (Júnior) — AGX Software
 React, TypeScript, MongoDB, Node, Antd

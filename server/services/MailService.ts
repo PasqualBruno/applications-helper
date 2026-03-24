@@ -1,6 +1,6 @@
 import nodemailer from "nodemailer";
 import { generateJobEmail } from "../src/templates/jobTemplate.js";
-import type { MailRequest } from "../src/types/mail.js";
+import type { ISendEmailRequest } from "../src/types/mail.js";
 
 export const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
@@ -16,15 +16,15 @@ export const transporter = nodemailer.createTransport({
 });
 
 export const sendJobEmail = async ({
-  nomeVaga,
-  emailDestino,
-}: MailRequest): Promise<void> => {
-  const template = generateJobEmail(nomeVaga);
+  jobName,
+  recipientEmail,
+}: ISendEmailRequest): Promise<void> => {
+  const template = generateJobEmail(jobName);
 
   await transporter.sendMail({
     from: `Bruno Pasqual <${process.env.EMAIL_USER}>`,
-    to: emailDestino,
-    subject: `Currículo ${nomeVaga} - Bruno Pasqual`,
+    to: recipientEmail,
+    subject: `Currículo ${jobName} - Bruno Pasqual`,
     text: template,
     attachments: [
       {
