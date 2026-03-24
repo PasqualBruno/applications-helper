@@ -1,5 +1,5 @@
 import { type Request, type Response } from "express";
-import { sendJobEmail } from "../../services/MailService.js";
+import { sendJobEmail } from "../services/MailService.js";
 import type { ISendEmailRequest } from "../types/mail.js";
 
 export class EmailController {

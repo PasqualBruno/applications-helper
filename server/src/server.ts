@@ -1,8 +1,9 @@
 import cors from "cors";
 import "dotenv/config";
 import express from "express";
-import { transporter } from "../services/MailService.js";
+
 import emailRouter from "./routes/email.routes.js";
+import { transporter } from "./services/MailService.js";
 
 const app = express();
 app.use(cors());
