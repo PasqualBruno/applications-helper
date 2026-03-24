@@ -28,7 +28,7 @@ const EmailForm: React.FC = () => {
   return (
     <Card className="form-card">
       <Title level={4} className="form-title">
-        Ajudante de aplicações
+        Assistente de aplicações
       </Title>
 
       <Form
