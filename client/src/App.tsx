@@ -6,11 +6,22 @@ import "./index.css";
 const customTheme = {
   algorithm: theme.darkAlgorithm,
   token: {
-    colorPrimary: "#9d66ff",
-    colorSuccess: "#00f5e1",
-    colorBgLayout: "#101010",
-    colorBgContainer: "#1a1a1a",
-    borderRadius: 8,
+    colorPrimary: "#f97316",
+    colorBgLayout: "#000000",
+    colorBgContainer: "#161b22",
+    colorBorder: "#30363d",
+    colorTextBase: "#ffffff",
+    borderRadius: 6,
+  },
+  components: {
+    Input: {
+      colorBgContainer: "#0a0a0a",
+      colorBorder: "#30363d",
+      controlOutline: "rgba(249, 115, 22, 0.1)",
+    },
+    Button: {
+      colorPrimary: "#f97316",
+    },
   },
 };
 

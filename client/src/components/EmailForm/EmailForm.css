@@ -1,41 +1,67 @@
 .form-card {
   width: 420px;
   background-color: var(--bg-card) !important;
-  border: 1px solid rgba(157, 102, 255, 0.4) !important;
-  border-radius: 12px !important;
+  border: 1px solid var(--color-border-dark) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
 }
 
 .form-title {
-  color: var(--primary-purple) !important;
+  color: var(--text-main) !important;
   text-align: center;
   margin-bottom: 25px !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.5px;
 }
 
-/* Botão principal com o roxo do Vite */
+.form-title::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background-color: var(--accent-orange);
+  margin: 10px auto 0;
+}
+
 .btn-submit {
-  background-color: var(--primary-purple) !important;
+  background-color: var(--accent-orange) !important;
+  border-color: var(--accent-orange) !important;
   height: 45px !important;
   font-weight: 600 !important;
+  color: #ffffff !important;
+  transition: all 0.2s ease !important;
+}
+
+.btn-submit:hover:not(:disabled) {
+  background-color: var(--accent-orange-hover) !important;
+  border-color: var(--accent-orange-hover) !important;
 }
 
 .btn-submit:disabled {
-  background-color: #333 !important;
-  color: #666 !important;
+  background-color: #21262d !important;
+  color: #6e7681 !important;
   border: none !important;
 }
 
-/* Botão limpar com o ciano neon */
 .btn-clear {
-  color: var(--accent-cyan) !important;
+  color: var(--text-label) !important;
   margin-top: 10px;
+  font-weight: 500;
+  transition: all 0.2s ease;
 }
 
 .btn-clear:hover {
-  color: #fff !important;
+  color: var(--accent-orange) !important;
   text-decoration: underline !important;
 }
 
-/* Estilo para os labels do Antd ficarem claros */
 .ant-form-item-label > label {
-  color: #aaa !important;
+  color: var(--text-label) !important;
+  font-weight: 500;
+}
+
+.ant-input:focus,
+.ant-input-focused {
+  border-color: var(--accent-orange) !important;
+  box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.1) !important;
 }
