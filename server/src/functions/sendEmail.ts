@@ -1,14 +1,14 @@
-// 1. Importamos o pacote inteiro como 'azure' (para o runtime)
+
 import * as azure from "@azure/functions";
 
-// 2. Importamos apenas os TIPOS separadamente (usando 'import type')
+
 import type {
   HttpRequest,
   HttpResponseInit,
   InvocationContext,
 } from "@azure/functions";
 
-// 3. Importamos o seu service e tipos
+
 import { sendJobEmail } from "../services/MailService.js";
 import type { ISendEmailRequest } from "../types/mail.js";
 
@@ -44,7 +44,7 @@ export async function sendEmail(
   }
 }
 
-// 4. Atenção aqui: Usamos 'azure.app' em vez de apenas 'app'
+
 azure.app.http("sendEmail", {
   methods: ["POST"],
   authLevel: "anonymous",

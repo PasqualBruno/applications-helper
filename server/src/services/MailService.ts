@@ -1,4 +1,5 @@
 import nodemailer from "nodemailer";
+import path from "path";
 import { generateJobEmail } from "../templates/jobTemplate.js";
 import type { ISendEmailRequest } from "../types/mail.js";
 
@@ -21,6 +22,9 @@ export const sendJobEmail = async ({
 }: ISendEmailRequest): Promise<void> => {
   const template = generateJobEmail(jobName);
 
+
+  const pdfPath = path.join(process.cwd(), "curriculo - Bruno Pasqual.pdf");
+
   await transporter.sendMail({
     from: `Bruno Pasqual <${process.env.EMAIL_USER}>`,
     to: recipientEmail,
@@ -29,7 +33,7 @@ export const sendJobEmail = async ({
     attachments: [
       {
         filename: "curriculo - Bruno Pasqual.pdf",
-        path: "./curriculo - Bruno Pasqual.pdf",
+        path: pdfPath,
       },
     ],
   });

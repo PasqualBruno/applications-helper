@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "main": "dist/functions/*.js",
   "type": "module",
-  "scripts": {
-    "build": "tsc",
-    "start": "node dist/server.js",
-    "dev": "tsx watch src/server.ts",
-    "dev2": "cross-env NODE_OPTIONS='--dns-result-order=ipv4first' tsx watch src/server.ts"
+"scripts": {
+    "build": "tsc && cp \"curriculo - Bruno Pasqual.pdf\" dist/",
+    "watch": "tsc -w",
+    "start": "func start",
+    "test": "echo \"No tests yet...\""
   },
   "engines": {
     "node": ">=20.x"
