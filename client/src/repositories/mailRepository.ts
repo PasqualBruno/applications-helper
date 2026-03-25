@@ -4,14 +4,14 @@ import api from "../services/api";
 
 class MailRepository {
   private readonly api: AxiosInstance;
-  private readonly path: string = "/application";
+  private readonly path: string = "/api";
 
   constructor() {
     this.api = api;
   }
 
   async sendEmail(data: IApplicationDTO): Promise<any> {
-    const response = await this.api.post(`${this.path}/send`, data);
+    const response = await this.api.post(`${this.path}/sendemail`, data);
     return response.data;
   }
 
