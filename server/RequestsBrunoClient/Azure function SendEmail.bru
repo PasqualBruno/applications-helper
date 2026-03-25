@@ -1,0 +1,24 @@
+meta {
+  name: Azure function SendEmail
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:7071/api/sendEmail
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "jobName": "Fullstack Developer",
+    "recipientEmail": "brunopasqual0@gmail.com",
+    "postLink": "https://linkedin.com/vaga-exemplo"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
